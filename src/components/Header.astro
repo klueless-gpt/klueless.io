@@ -1,34 +1,43 @@
 ---
 import Logo from './Logo.astro';
 import NavLink from './NavLink.astro';
+import Container from './Container.astro';
+import Button from './Button.astro';
 ---
 
 <header class="py-10">
-  <nav class="relative z-50 flex justify-between">
-    <div class="flex items-center">
-      <a href="/" aria-label="Home">
-        <Logo class="h-10 w-auto" />
-      </a>
-    </div>
+  <!-- I need a red border around container -->
+  <Container>
+    <nav class="relative z-50 flex justify-between">
+      <div class="flex items-center">
+        <a href="/" aria-label="Home">
+          <Logo class="h-10 w-auto" />
+        </a>
+      </div>
 
-    <div class="hidden md:flex md:gap-x-6">
-      <NavLink href="#features">Features</NavLink>
-      <NavLink href="#testimonials">Testimonials</NavLink>
-      <NavLink href="#pricing">Pricing</NavLink>
-    </div>
+      <div class="hidden md:flex md:gap-x-6">
+        <NavLink href="#features">Features</NavLink>
+        <NavLink href="#testimonials">Testimonials</NavLink>
+        <NavLink href="#pricing">Pricing</NavLink>
+      </div>
 
-    <!-- Right Side Actions (e.g., Sign in, Register) Placeholder -->
-    <!-- Replace with actual components or links when ready -->
-    <div class="flex items-center">
-      <a href="/login">Sign in</a>
-      <a href="/register">Register</a>
-    </div>
+      <!-- Right Side Actions (e.g., Sign in, Register) Placeholder -->
+      <!-- Replace with actual components or links when ready -->
+      <div class="flex items-center">
+        <NavLink href="/login">Sign in</NavLink>
+        <Button href="/register" color="blue">
+          <span>
+            Get started <span className="hidden lg:inline">today</span>
+          </span>
+        </Button>
+      </div>
 
-    <!-- Mobile Navigation Toggle Placeholder -->
-    <!-- Replace with <MobileNavigation /> component when ready -->
-    <div class="md:hidden">
-      <!-- Mobile nav toggle button goes here -->
-      <button aria-label="Toggle Navigation">Menu</button>
-    </div>
-  </nav>
+      <!-- Mobile Navigation Toggle Placeholder -->
+      <!-- Replace with <MobileNavigation /> component when ready -->
+      <div class="md:hidden">
+        <!-- Mobile nav toggle button goes here -->
+        <button aria-label="Toggle Navigation">Menu</button>
+      </div>
+    </nav>
+  </Container>
 </header>

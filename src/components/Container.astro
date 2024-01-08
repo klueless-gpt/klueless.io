@@ -1,0 +1,11 @@
+---
+// Access props passed to the component and extract className if provided
+const { className = '', ...props } = Astro.props;
+
+// Concatenate the default classes with any custom classes passed
+const containerClass = `mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ${className}`;
+---
+
+<div class={containerClass} {...props}>
+  <slot />
+</div>
